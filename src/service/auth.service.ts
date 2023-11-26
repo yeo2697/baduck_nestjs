@@ -57,8 +57,12 @@ export class AuthService {
         }
     }
 
-    
+    /**
+     * 사용자 등록
+     * @param signUpDto 
+     */
     public async signup(signUpDto: SignUpDto): Promise <void> {
+        // 트랜잭션 사용을 위한 QueryRunner
         const queryRunner = this.dataSource.createQueryRunner();
 
         await queryRunner.connect();
